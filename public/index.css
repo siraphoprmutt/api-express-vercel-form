@@ -1,0 +1,9 @@
+body.swal2-shown {
+    padding-right: 0 !important;
+    overflow: hidden !important;
+}
+
+.toastify .toast-close {
+    color: white !important;
+    opacity: 1 !important;
+}

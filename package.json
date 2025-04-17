@@ -1,0 +1,28 @@
+{
+  "name": "api-express-vercel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js",
+    "deploy": "vercel --prod",
+    "preview": "vercel"
+  },
+  "author": "Siraphop Nonpala",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.2",
+    "nodemon": "^3.1.9"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "node.js",
+    "vercel"
+  ]
+}

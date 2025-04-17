@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th" class="h-full bg-gray-100">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/images/favicon-32x32.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Toastify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body class="min-h-screen flex flex-col text-gray-800">
+
+    <header class="w-full bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-bold text-blue-700">ระบบลงทะเบียน</h1>
+            <nav class="space-x-4">
+                <a href="#" class="text-gray-600 hover:text-blue-600">ติดต่อ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main
+        class="flex-grow w-full max-w-md mx-auto bg-white rounded-2xl shadow-lg mt-10 flex flex-col justify-between p-8">
+        <h1 class="text-2xl font-bold text-blue-700 text-center mb-2">ลงทะเบียนผู้ใช้งาน</h1>
+        <p class="text-gray-500 text-center text-sm mb-6">กรอกข้อมูลเพื่อเริ่มใช้งาน</p>
+
+        <label class="block text-sm font-medium text-gray-700 mb-1">ประเภทผู้ใช้งาน
+            <span class="text-red-500 text-xs">*</span>
+        </label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div onclick="selectUserType('student')" id="card-student"
+                class="cursor-pointer border-2 rounded-xl p-4 text-center transition duration-200 hover:border-blue-500">
+                <div class="text-4xl mb-2">🎓</div>
+                <h2 class="text-lg font-semibold mb-1">นักศึกษา</h2>
+                <p class="text-sm text-gray-500">สำหรับนักศึกษาที่ต้องการลงทะเบียนใช้งานระบบ</p>
+            </div>
+
+            <div onclick="selectUserType('staff')" id="card-staff"
+                class="cursor-pointer border-2 rounded-xl p-4 text-center transition duration-200 hover:border-blue-500">
+                <div class="text-4xl mb-2">💼</div>
+                <h2 class="text-lg font-semibold mb-1">บุคลากร</h2>
+                <p class="text-sm text-gray-500">สำหรับอาจารย์หรือเจ้าหน้าที่</p>
+            </div>
+        </div>
+
+        <form class="flex flex-col justify-between h-full flex-grow" onsubmit="handleRegister(event)">
+            <input type="hidden" id="userType" name="userType" />
+            <div class="space-y-5 flex-grow">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">ชื่อ-นามสกุล
+                        <span class="text-red-500 text-xs">*</span>
+                    </label>
+                    <input type="text" id="name" name="name"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 placeholder:text-gray-400"
+                        placeholder="กรอกชื่อและนามสกุล" />
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">เบอร์โทรศัพท์
+                        <span class="text-red-500 text-xs">*</span>
+                    </label>
+                    <input type="tel" id="phone" name="phone"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 placeholder:text-gray-400"
+                        placeholder="เช่น 0812345678" />
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">อีเมล
+                        <span class="text-red-500 text-xs">*</span>
+                    </label>
+                    <input type="text" id="email" name="email"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 placeholder:text-gray-400"
+                        placeholder="เช่น example@email.com" />
+                </div>
+                <div>
+                    <label for="address" class="block text-sm font-medium text-gray-700 mb-1">ที่อยู่
+                        <span class="text-red-500 text-xs">*</span>
+                    </label>
+                    <textarea id="address" name="address" rows="6"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 placeholder:text-gray-400"
+                        placeholder="ระบุที่อยู่ของคุณ"></textarea>
+                </div>
+            </div>
+            <div>
+                <label for="attachment" class="block text-sm font-medium text-gray-700 mb-1">แนบไฟล์เพิ่มเติม
+                    (ถ้ามี)</label>
+                <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm text-gray-600 file:bg-blue-50 file:border-0 file:py-2 file:px-4 file:text-blue-700 file:cursor-pointer" />
+            </div>
+            <div class="mt-6">
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 transition duration-200 text-white font-medium py-2.5 rounded-lg shadow-md hover:shadow-lg">
+                    ยืนยันการลงทะเบียน
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="w-full bg-gray-200 mt-10">
+        <div class="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-600">
+            &copy; 2025 xxx. สงวนลิขสิทธิ์.
+        </div>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
