@@ -1,14 +1,14 @@
-# 🚀 API Express on Vercel
+# 🚀 API Express Form on Vercel
 
-A minimal Node.js Express API deployed with Vercel in seconds.
+A minimal Node.js Express Form API deployed with Vercel in seconds.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/siraphoprmutt/api-express-vercel)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/siraphoprmutt/api-express-vercel-form)
 
 ---
 
 ## 📦 Features
 
-- ⚡️ Fast & lightweight Express API
+- ⚡️ Fast & lightweight Express Form API
 - 🌐 Deployed on Vercel with serverless functions
 - 🔁 Auto preview deploys
 - 📁 Simple structure for easy extension
@@ -20,8 +20,8 @@ A minimal Node.js Express API deployed with Vercel in seconds.
 ### 1. **Clone this project**
 
 ```bash
-git clone https://github.com/siraphoprmutt/api-express-vercel.git
-cd api-express-vercel
+git clone https://github.com/siraphoprmutt/api-express-vercel-form.git
+cd api-express-vercel-form
 ```
 
 ### 2. **Install Vercel CLI**
@@ -56,16 +56,16 @@ vercel login
 
 Skip all the steps above? Just click the button below and deploy instantly to your Vercel account:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/siraphoprmutt/api-express-vercel)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/siraphoprmutt/api-express-vercel-form)
 
 ---
 
 ## 📁 Project Structure
 
 ```bash
-api-express-vercel/
+api-express-vercel-form/
 ├── api/
-│   └── index.js       # Main Express API endpoint
+│   └── index.js       # Main Express Form API endpoint
 ├── vercel.json        # Vercel configuration
 └── README.md          # This file
 ```
